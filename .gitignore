@@ -1,0 +1,7 @@
+# vim swap files
+*.sw[p-z]
+
+# Python build
+build/
+egg-info/
+*.py[oc]
