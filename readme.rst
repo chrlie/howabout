@@ -10,17 +10,16 @@ Didyoumean is a Python library to suggest similar strings. Use it in a command-l
    choices = ['sat', 'sot']
 
    # returns 'sat', since 
-   #   'sat' -> 'sate' 
-   # but 
+   #   'sat' -> 'sate'
    #   'sot' -> 'sat' -> 'sate'
    best_match('sate', choices) 
 
-Examples can be found under `examples/`.
+Examples can be found under ``examples/``.
 
 Argparse
 --------
 
-Python's `argparse` library is not supported out of the box as it cannot be extended or patched.
+Python's ``argparse`` library is not supported out of the box as it cannot be extended or patched.
 
 Installation
 ------------
