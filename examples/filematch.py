@@ -2,7 +2,7 @@ import glob
 import sys
 import os
 
-from didyoumean import best_matches
+from howabout import best_matches
 
 def exists_or_best_match(filename):
    """\

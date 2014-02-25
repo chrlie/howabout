@@ -1,11 +1,11 @@
-Did You Mean?
+How about ___
 =============
 
-Didyoumean is a Python library to suggest similar strings. Use it in a command-line project or anywhere where simple misspellings occur.
+Howabout is a Python library to suggest similar strings. Use it in a command-line project or anywhere where simple misspellings occur.
 
 .. code:: python
 
-   from didyoumean import best_match
+   from howabout import best_match
 
    choices = ['sat', 'sot']
 
@@ -28,7 +28,7 @@ Install with pip:
 
 .. code:: sh
 
-   $ pip install didyoumean
+   $ pip install howabout
 
 Testing
 -------

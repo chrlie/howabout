@@ -70,7 +70,7 @@ class Matcher(object):
 
       ::
 
-         from didyoumean import all_matches
+         from howabout import all_matches
 
          choices = ['pot', 'cat', 'bat']
 

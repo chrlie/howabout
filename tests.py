@@ -1,6 +1,6 @@
 import random
 
-from didyoumean import get_levenshtein
+from howabout import get_levenshtein
 
 def test_levenshtein_recursion_limit():
    alphabet = 'abcdefghijklmnopqrstuvwxyz'
