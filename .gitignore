@@ -1,6 +1,12 @@
 # vim swap files
 *.sw[p-z]
 
+# vim undo files
+*un~
+
+# Virtualenv
+.python/
+
 # Python build
 build/
 egg-info/
