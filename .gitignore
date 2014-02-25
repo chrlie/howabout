@@ -1,5 +1,5 @@
 # vim swap files
-*.sw[p-z]
+*sw[p-z]
 
 # vim undo files
 *un~
