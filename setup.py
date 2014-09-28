@@ -1,19 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from setuptools import setup
+
+kw = {}
+
 # Set __version__ in the namespace
-execfile('howabout/version.py')
-
-try:
-   from setuptools import setup
-   kw = {}
-
-except ImportError:
-   from distutils.core import setup
-   kw = {}
+with open('howabout/version.py') as file:
+   exec(file.read())
 
 with open('readme.rst', 'rb+') as readme:
-   long_description = readme.read()
+   long_description = readme.read().decode('utf-8')
 
 setup(
    name = 'howabout',
@@ -32,7 +29,9 @@ setup(
       'Programming Language :: Python',
       'License :: OSI Approved :: MIT License',
    ],
-
+   install_requires = [
+      'six == 1.8.0',
+   ],
    license = 'MIT License',
    long_description = long_description,
    **kw

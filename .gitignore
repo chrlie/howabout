@@ -8,6 +8,10 @@
 .python/
 
 # Python build
+dist/
 build/
-egg-info/
+*egg-info/
 *.py[oc]
+
+# Python test
+.tox/

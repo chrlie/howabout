@@ -1,4 +1,6 @@
-from itertools import groupby, imap
+from itertools import groupby
+
+from six.moves import map
 
 def get_levenshtein(first, second):
    """\
@@ -96,7 +98,7 @@ class Matcher(object):
 
       if group:
          for rank, choices in groupby(matched, key=lambda m: m[0]):
-            yield imap(lambda m: m[1], choices)
+            yield map(lambda m: m[1], choices)
       else:
          for rank, choice in matched:
             yield choice
