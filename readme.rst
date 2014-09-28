@@ -37,11 +37,10 @@ Install with pip:
 Testing
 -------
 
-If you want to run the tests, install the requirements in ``requirements.txt``:
+Use ``tox`` to run the tests.
 
 .. code:: sh
 
    $ virtualenv --no-site-packages .python && source .python/bin/activate
    $ pip install -r requirements.txt
-
-
+   $ tox
