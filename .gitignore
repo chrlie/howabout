@@ -15,3 +15,6 @@ build/
 
 # Python test
 .tox/
+
+# PyCharm/IntelliJ
+.idea/
