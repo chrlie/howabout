@@ -2,55 +2,59 @@ import random
 
 from howabout import get_levenshtein
 
+
 def test_levenshtein_recursion_limit():
-   alphabet = 'abcdefghijklmnopqrstuvwxyz'
-   random_str = lambda size: [random.choice(alphabet) for i in range(0, size)]
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    random_str = lambda size: [random.choice(alphabet) for i in range(0, size)]
 
-   first = random_str(1024)
-   second = random_str(1024)
+    first = random_str(1024)
+    second = random_str(1024)
 
-   # This should work
-   try:
-      get_levenshtein(first, second)
-   except RuntimeError:
-      raise AssertionError('Recursion limit exceeded')
+    # This should work
+    try:
+        get_levenshtein(first, second)
+    except RuntimeError:
+        raise AssertionError('Recursion limit exceeded')
+
 
 def test_levenshtein_distance():
-   first = 'fitting'
-   second = 'sitting'
+    first = 'fitting'
+    second = 'sitting'
 
-   distance = get_levenshtein(first, second)
-   assert distance == 1
+    distance = get_levenshtein(first, second)
+    assert distance == 1
 
-   first = ''
-   second = 'sitting'
+    first = ''
+    second = 'sitting'
 
-   distance = get_levenshtein(first, second)
-   assert distance == 7
+    distance = get_levenshtein(first, second)
+    assert distance == 7
 
-   first = 'sitting'
-   second = ''
+    first = 'sitting'
+    second = ''
 
-   distance = get_levenshtein(first, second)
-   assert distance == 7
+    distance = get_levenshtein(first, second)
+    assert distance == 7
 
-   first = ''
-   second = ''
+    first = ''
+    second = ''
 
-   distance = get_levenshtein(first, second)
-   assert distance == 0
+    distance = get_levenshtein(first, second)
+    assert distance == 0
+
 
 def test_get_closest_choice():
-   choices = [
-      'sitting',
-      'fitting',
-      'flitting',
-   ]
+    choices = [
+        'sitting',
+        'fitting',
+        'flitting',
+    ]
 
-   string = 'spitting'
+    string = 'spitting'
 
-   # These should be returned sorted by rank, then alphabetically
-   #get_closest(string, choices
+    # These should be returned sorted by rank, then alphabetically
+    # get_closest(string, choices
+
 
 def test_ranked_choices():
-   pass
+    pass
