@@ -10,45 +10,48 @@ def get_levenshtein(first, second):
     :param first:     the first string
     :param second:    the second string
     """
+    if not first:
+        return len(second)
 
-    first_len = len(first) + 1
-    second_len = len(second) + 1
+    if not second:
+        return len(first)
 
-    prev = list(range(0, second_len))
+    prev_distances = range(0, len(second) + 1)
+    curr_distances = None
 
-    # If the first string is empty, then the loop will
-    # never run. Thus, the edit distance between the
-    # second string and empty string for any given
-    # position is that position.
+    # Find the minimum edit distance between each substring of 'first' and
+    # the entirety of 'second'. The first column of each distance list is
+    # the distance from the current string to the empty string.
+    for first_idx, first_char in enumerate(first, start=1):
+        # Keep only the previous and current rows of the
+        # lookup table in memory
+        curr_distances = [first_idx]
 
-    current = prev
-
-    # Keep only the previous and current rows of the
-    # lookup table in memory
-
-    for row in range(1, first_len):
-        current = [row]
-
-        for col in range(1, second_len):
-            compare = []
-
-            if row == col:
-                value = prev[col - 1]
-                value += 0 if first[row - 1] == second[col - 1] else 1
-                compare.append(value)
-
-            compare.append(current[col - 1] + 1)
-            compare.append(prev[col] + 1)
+        for second_idx, second_char in enumerate(second, start=1):
+            # Take the max of the neighbors
+            compare = [
+                prev_distances[second_idx - 1],
+                prev_distances[second_idx],
+                curr_distances[second_idx - 1],
+            ]
 
             distance = min(*compare)
-            current.append(distance)
 
-        prev = current
+            if first_char != second_char:
+                distance += 1
 
-    return current[-1]
+            curr_distances.append(distance)
+
+        prev_distances = curr_distances
+
+    return curr_distances[-1]
 
 
 class Matcher(object):
+    """\
+    TODO
+    """
+
     def __init__(self):
         self.distance_func = get_levenshtein
 
