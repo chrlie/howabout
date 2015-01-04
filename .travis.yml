@@ -8,7 +8,7 @@ python:
    - pypy
    - pypy3
 
-script: "nosetests tests"
+script: "behave"
 
 notifications:
    email: false

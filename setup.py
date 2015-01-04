@@ -37,4 +37,4 @@ setup(
     license='MIT License',
     long_description=long_description,
     **kw
-)     
+)
