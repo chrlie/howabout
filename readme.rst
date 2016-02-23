@@ -5,6 +5,10 @@ How about ___
    :alt: Build status
    :target: https://travis-ci.org/clibc/howabout
 
+.. image:: https://img.shields.io/pypi/v/howabout.svg
+    :target: https://pypi.python.org/pypi/howabout
+
+
 Howabout is a Python library to suggest similar strings. Use it in a command-line project or anywhere where simple misspellings occur.
 
 .. code:: python
