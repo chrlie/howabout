@@ -1,9 +1,9 @@
 How about ___
 =============
 
-.. image:: https://travis-ci.org/clibc/howabout.png?branch=master
+.. image:: https://travis-ci.org/chrlie/howabout.png?branch=master
    :alt: Build status
-   :target: https://travis-ci.org/clibc/howabout
+   :target: https://travis-ci.org/chrlie/howabout
 
 .. image:: https://img.shields.io/pypi/v/howabout.svg
     :target: https://pypi.python.org/pypi/howabout
